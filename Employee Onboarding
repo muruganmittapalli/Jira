@@ -1,4 +1,4 @@
-// Create Subtask "Onboarding Sub-Task" with summary "VPN - <summary>"
+// Create Subtask "Onboarding Sub-Task" with summary "VPN New User Onboarding - <summary>"
    if(#{VPN Access Needed} == "Yes") {  
    if(#{Companies & Departments} != "Vital Source Technologies (01-1168)" || #{Companies & Departments} != "Verba (01-1168)") 
   {
@@ -19,7 +19,8 @@
   }
 
 
-// Create Subtask "Onboarding Sub-Task" with summary "Payroll If Associate type not equal to Contractor- <summary>"
+// Create Subtask "Onboarding Sub-Task" with summary "Payroll - <summary>"
+//If Associate type not equal to Contractor- <summary>"
 if(#{Associate Type?} != "Contractor") {   
     string issueType="Onboarding Sub-Task";
     string issueSummary="Payroll New User Onboarding - "+summary;
