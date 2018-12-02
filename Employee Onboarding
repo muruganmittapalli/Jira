@@ -29,31 +29,6 @@ if(#{Associate Type?} != "Contractor") {
     %subtask%.assignee = "unassigned";
 }
 
-
-
-// Create Subtask "Onboarding Sub-Task" with summary "End User Support New User Onboarding?
-
-if(isNotNull(ComputerNeeds) && #{ComputerNeeds} != "None" && #{Associate Type?} != "Warehouse Temp") { 
-    string issueType=" Onboarding Sub-Task ";
-    string issueSummary=" End User Support New User Onboarding - "+summary;
-    string subtask = cloneIssueToSubtask(key, issueType, issueSummary);
-
-    string [] cnd = #{Companies & Departments};
-    string cndParent = cnd[0];
-    string cndChild = cnd[1];
-
-    if(cndParent == "Vital Source Technologies (01-1168)" || cndParent == "Verba (01-1168)") {
-        %subtask%.AssignmentGroup = " VST_IT_End_User_Support "; 
-    }
-    else {
-        %subtask%.AssignmentGroup = " ICG_IT_End_User_Support "; 
-    }
-
-    %subtask%.assignee = "unassigned";
-}
-
-
-
 // Create Subtask "Onboarding Sub-Task" with summary "Desk Phone new user on boarding"
 if(DeskPhone=="Yes") {
     string issueType="Onboarding Sub-Task";
