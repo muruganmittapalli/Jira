@@ -19,7 +19,7 @@
   }
 
 
-// Create Subtask "Onboarding Sub-Task" with summary "Payroll - <summary>"
+// Create Subtask "Onboarding Sub-Task" with summary "Payroll New User Onboarding - <summary>"
 //If Associate type not equal to Contractor- <summary>"
 if(#{Associate Type?} != "Contractor") {   
     string issueType="Onboarding Sub-Task";
@@ -57,7 +57,7 @@ if(isNotNull(ComputerNeeds) && #{ComputerNeeds} != "None" && #{Associate Type?} 
 // Create Subtask "Onboarding Sub-Task" with summary "Desk Phone new user on boarding"
 if(DeskPhone=="Yes") {
     string issueType="Onboarding Sub-Task";
-    string issueSummary="Telecom New User Onboarding -"+summary;
+    string issueSummary="Desk Phone new user on boarding -"+summary;
     string subtask = cloneIssueToSubtask(key, issueType, issueSummary);
     %subtask%.AssignmentGroup = "ICG_IT_Telecom";
      %subtask%.assignee = "unassigned";
@@ -115,9 +115,7 @@ addComment(key, currentUser(), "Your New Employee Setup ticket has been created.
 
 
 // When messaging_and_security HR-Onboarding Sub-Task is resolved, 
-create iKnow Onboarding Sub-Task if Associate Type? == Contractor
-
-
+// create iKnow Onboarding Sub-Task if Associate Type? == Contractor
 
 if( issueType == "Onboarding Sub-Task"
       && contains(summary, "Messaging & security new user onboarding")
@@ -137,8 +135,6 @@ if( issueType == "Onboarding Sub-Task"
 // Changing the the text of the messaging_and_security Onboarding Sub-Task will
 // screw this up!
 
-
-
 if(#{HipChat} == "Yes" 
       && issueType == "Onboarding Sub-Task"
       && contains(summary, "Messaging & security new user onboarding")) {
@@ -153,8 +149,6 @@ if(#{HipChat} == "Yes"
 
 // When messaging_and_security HR-Onboarding Sub-Task is resolved, 
 // create Zoom Onboarding Sub-Task 
-
-
 
 if( issueType == "Onboarding Sub-Task"
       && contains(summary, "Messaging & security new user onboarding")
