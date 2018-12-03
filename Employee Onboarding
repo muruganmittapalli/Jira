@@ -1,6 +1,5 @@
 //Project: IT Service Desk
 //Issue type: Onboarding Sub-Task
-//Custom Fields:Companies & Departments, VPN Access Needed}
 //When Parent Issue met all conditions auto create a new subtask
 
 // Create Subtask "Onboarding Sub-Task" with summary "VPN New User Onboarding - <summary>"
